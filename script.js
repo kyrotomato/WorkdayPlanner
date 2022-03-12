@@ -1,5 +1,16 @@
 var todaysDate = moment().format("MMM Do YYYY");
-$(currentDay).text(todaysDate);
+$(currentDay).text(todaysDate); 
+
+//local storage item grab
+$(".1").val(localStorage.getItem("9"));
+$(".2").val(localStorage.getItem("10"));
+$(".3").val(localStorage.getItem("11"));
+$(".4").val(localStorage.getItem("12"));
+$(".5").val(localStorage.getItem("13"));
+$(".6").val(localStorage.getItem("14"));
+$(".7").val(localStorage.getItem("15"));
+$(".8").val(localStorage.getItem("16"));
+$(".9").val(localStorage.getItem("17"));
 
 //check time
 function checkTime() {
@@ -8,7 +19,8 @@ function checkTime() {
 
 $(".time-block").each(function () {
     var timeBlock = parseInt($(this).attr("id"),10, 1);
-    console.log(timeBlock)
+    
+    //apply classes for background
 
     if (timeBlock < currentTime) {
         $(this).removeClass("future");
@@ -23,18 +35,24 @@ $(".time-block").each(function () {
     } else {
         $(this).removeClass("past");
         $(this).removeClass("present");
-        $(this.addClass("future"));
+        $(this).addClass("future");
     }
     
 
 });
 }
-checkTime();
 
 
 
 
+//save button onclick
+$(".saveBtn").click(function() {
 
-//give save button functionality
-    //save the entered text to local storage
         //save it at the time entered
+        var task = $(this).siblings(".tasktext").val();
+        var timestamp = $(this).parent().attr("id");
+        localStorage.setItem(timestamp, task);
+});
+
+
+checkTime();
