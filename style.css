@@ -71,21 +71,7 @@ textarea{
 }
 
 /*Styling*/
-.time {
-  border-top: dashed black 1px;
-  border-bottom: dashed black 1px;
-  border-right: #000000 1px solid;
 
-}
 textarea {
   border: 0;
-}
-.past {
-background-color: gray;
-}
-.present {
-background-color: red;
-}
-.future{
-background: green;
 }
