@@ -21,9 +21,9 @@ $(".time-block").each(function () {
         $(this).removeClass("future");
         $(this).addClass("present");
     } else {
-        $(this).removeClass("past")
+        $(this).removeClass("past");
         $(this).removeClass("present");
-        $(this.addClass("future"))
+        $(this.addClass("future"));
     }
     
 
