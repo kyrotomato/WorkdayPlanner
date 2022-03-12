@@ -8,13 +8,24 @@ function checkTime() {
 
 $(".time-block").each(function () {
     var timeBlock = parseInt($(this).attr("id"),10, 1);
+    console.log(timeBlock)
 
     if (timeBlock < currentTime) {
-        $(this).addclass("past");
+        $(this).removeClass("future");
+        $(this).removeClass("present");
+        $(this).addClass("past");
+
     }
     else if (timeBlock === currentTime) {
-        $(this).addclass("present");
+        $(this).removeClass("past");
+        $(this).removeClass("future");
+        $(this).addClass("present");
+    } else {
+        $(this).removeClass("past")
+        $(this).removeClass("present");
+        $(this.addClass("future"))
     }
+    
 
 });
 }
