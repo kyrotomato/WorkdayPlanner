@@ -1,10 +1,24 @@
 var todaysDate = moment().format("MMM Do YYYY");
-var timeArray = ["8","9","10","11","12","1","2","3","4","5"];
 $(currentDay).text(todaysDate);
 
 //check time
-function checkTime()
-var currentTime = moment().hour();
+function checkTime() {
+    //current time variable
+    var currentTime = moment().hour();
+
+$(".time-block").each(function () {
+    var timeBlock = parseInt(this.attr("id"));
+
+    if (timeBlock < currentTime) {
+        $(this).addclass("past");
+    }
+    else if (timeBlock === currentTime) {
+        $(this).addclass("present");
+    }
+
+});
+}
+checkTime();
 
 
 
