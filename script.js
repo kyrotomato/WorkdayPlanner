@@ -7,7 +7,7 @@ function checkTime() {
     var currentTime = moment().hour();
 
 $(".time-block").each(function () {
-    var timeBlock = parseInt(this.attr("id"));
+    var timeBlock = parseInt($(this).attr("id"),10, 1);
 
     if (timeBlock < currentTime) {
         $(this).addclass("past");
